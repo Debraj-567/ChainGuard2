@@ -1,20 +1,21 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+Decentralized Return Verification • AI + Blockchain + Supply Chain Intelligence
 
-# Run and deploy your AI Studio app
+Phase 2 of the system is responsible for reading blockchain data generated in Phase 1 and automatically determining whether a returned product is valid, legitimate, and eligible for a refund.
 
-This contains everything you need to run your app locally.
+This component acts as the refund decision engine, ensuring end-to-end transparency and trust in the return workflow.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1jep5f3kATry5cPqt8SJJlarHGv6bqx74
+📌 Overview
 
-## Run Locally
+This bot receives the JSON payload from Phase-1 (PC-1), connects to the same smart contract on the Ethereum Sepolia blockchain, fetches all product lifecycle history, and applies refund validation logic to determine:
 
-**Prerequisites:**  Node.js
+Authenticity of the product
 
+Validity of metadata (IPFS)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Legitimacy of ownership transfers
+
+Correctness of status updates
+
+Eligibility for refund based on lifecycle and rules
+
+This creates a fully decentralized supply-chain + returns system.
