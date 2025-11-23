@@ -1,0 +1,5 @@
+{
+  "name": "ChainGuard: Product Lifecycle Tracker",
+  "description": "A blockchain-backed supply chain verification system. Tracks products from manufacturing to purchase using a simulated blockchain for immutable history, with AI-powered auditing.",
+  "requestFramePermissions": []
+}

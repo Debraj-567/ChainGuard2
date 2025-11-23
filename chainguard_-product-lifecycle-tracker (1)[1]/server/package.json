@@ -1,0 +1,31 @@
+{
+  "name": "chainguard-server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc -p .",
+    "start": "node dist/index.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "hardhat:node": "npx hardhat node",
+    "hardhat:deploy": "npx hardhat run --network localhost scripts/deploy.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "@prisma/client": "^5.10.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ethers": "^6.9.0",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.2",
+    "prisma": "^5.10.1",
+    "hardhat": "^2.18.0",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.5.1"
+  }
+}

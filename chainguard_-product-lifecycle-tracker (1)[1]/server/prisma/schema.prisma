@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  role      String
+  avatar    String?
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id            String        @id @default(cuid())
+  uid           String        @unique
+  name          String
+  category      String
+  batch         String?
+  metadata      Json?
+  currentStatus String
+  createdAt     DateTime      @default(now())
+  transactions  Transaction[]
+}
+
+model Transaction {
+  id         String   @id @default(cuid())
+  product    Product  @relation(fields: [productId], references: [id])
+  productId  String
+  txType     String
+  status     String
+  actor      String
+  timestamp  DateTime @default(now())
+  metadata   Json?
+}
